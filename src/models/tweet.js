@@ -4,16 +4,9 @@ const tweetSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true,
+        max:[280, 'Tweet is too long']
     },
-    userEmail: {
-        type: String
-    },
-    comments: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Comment'
-        }
-    ]
+    
 }, {timestamps: true});
 
 tweetSchema.virtual('contentWithEmail').get(function process() {
