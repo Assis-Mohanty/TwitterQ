@@ -5,13 +5,7 @@ const tweetSchema = new mongoose.Schema({
         type: String,
         required: true,
         max:[280, 'Tweet is too long']
-    },
-    hashtags:[
-        {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"Hashtag"
-        }
-    ]
+    }
 }, {timestamps: true});
 
 tweetSchema.virtual('contentWithEmail').get(function process() {
@@ -19,7 +13,6 @@ tweetSchema.virtual('contentWithEmail').get(function process() {
 })
 
 tweetSchema.pre('save', function(next) {
-    console.log('Inside a hook');
     next();
 })
 
