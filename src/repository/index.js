@@ -1,4 +1,4 @@
 module.exports={
-    TweetRepository:"./tweet-repository.js"
-    
+    TweetRepository:"./tweet-repository.js",
+    LikeRepository:"../repository/like-repository.js"
 }

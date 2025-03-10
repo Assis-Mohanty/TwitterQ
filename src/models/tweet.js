@@ -5,7 +5,11 @@ const tweetSchema = new mongoose.Schema({
         type: String,
         required: true,
         max:[280, 'Tweet is too long']
-    }
+    },
+    likes:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Like"
+    }]
 }, {timestamps: true});
 
 tweetSchema.virtual('contentWithEmail').get(function process() {

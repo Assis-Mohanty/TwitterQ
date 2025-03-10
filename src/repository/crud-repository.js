@@ -19,7 +19,7 @@ class CrudRepository {
             console.log("Something went wrong in crud repository")
             throw error;
         }
-    },
+    }
     async get(id){
         try {
             const result=await this.model.findById(id);
