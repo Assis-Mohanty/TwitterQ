@@ -18,7 +18,7 @@ class LikeService{
             //TODO 
         }
         else{
-            
+            throw new Error("Unknown model type")
         }
         const exists=await this.likeRepository.findByUserAndLikeable({
             user:userId,
